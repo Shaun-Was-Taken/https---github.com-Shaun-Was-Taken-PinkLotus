@@ -1,95 +1,67 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+import React from "react";
+import styles from "./Home.module.css";
+import Image from "next/image";
+import Link from "next/link";
+import Testimonial from "@/components/Testimonial/Testimonial";
+import PriceAcrylic from "@/components/PriceAcrylic/PriceAcrylic";
+import ContactUs from "@/components/ContactUs/ContactUs";
+//import hand from "../public/hand.png";
 
 export default function Home() {
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.js</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
+    <>
+      <div className={styles.mainContainer}>
+        <main className={styles.container}>
+          <div className={styles.logoImageContainer}>
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
+              className={styles.logo}
+              src="/pink_logo.png"
+              width={144}
+              height={131}
+              alt="PinkLotus Logo"
             />
-          </a>
-        </div>
+            <div className={styles.logoText}>
+              <p>Pink Lotus</p>
+              <small>Nails & Lash</small>
+            </div>
+          </div>
+
+          <div className={styles.titleContainer}>
+            <div className={styles.text}>
+              <div className={styles.wordContainer}>
+                <div className={styles.h1Container}>
+                  <h1>Give yourself a </h1>
+                  <h1>little pampering</h1>
+                </div>
+                <div className={styles.pContainer}>
+                  <p>Relax, sit back, get your nails done—we got you!</p>
+                </div>
+              </div>
+              <div className={styles.buttonContainer}>
+                <Link
+                  href={
+                    "https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ0aFTQ3nnG2zLf4vAKQalSi39Oc1SlYFzorY5Cd-ZtHUENN-Pva2OD6wn5C01ayLAm4rakfv7F1"
+                  }
+                  className={styles.link}
+                >
+                  Book An Appointment
+                </Link>
+              </div>
+            </div>
+            <div className={styles.imageContainer}>
+              <Image
+                className={styles.img}
+                src="/hand_large.png"
+                layout="fill"
+                alt="Hand Image"
+              />
+            </div>
+          </div>
+        </main>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore starter templates for Next.js.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  )
+      <Testimonial />
+      <PriceAcrylic />
+      <ContactUs />
+    </>
+  );
 }
